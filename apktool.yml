@@ -1,0 +1,61 @@
+!!brut.androlib.meta.MetaInfo
+apkFileName: 1dmusic.apk
+compressionType: false
+doNotCompress:
+- png
+- webp
+isFrameworkApk: false
+packageInfo:
+  forcedPackageId: '127'
+  renameManifestPackage: null
+sdkInfo:
+  minSdkVersion: '21'
+  targetSdkVersion: '27'
+sharedLibrary: false
+sparseResources: false
+unknownFiles:
+  build-data.properties: '8'
+  publicsuffixes.gz: '8'
+  javax/annotation/CheckForNull.java: '8'
+  javax/annotation/CheckForSigned.java: '8'
+  javax/annotation/CheckReturnValue.java: '8'
+  javax/annotation/Detainted.java: '8'
+  javax/annotation/MatchesPattern.java: '8'
+  javax/annotation/Nonnegative.java: '8'
+  javax/annotation/Nonnull.java: '8'
+  javax/annotation/Nullable.java: '8'
+  javax/annotation/OverridingMethodsMustInvokeSuper.java: '8'
+  javax/annotation/ParametersAreNonnullByDefault.java: '8'
+  javax/annotation/ParametersAreNullableByDefault.java: '8'
+  javax/annotation/PropertyKey.java: '8'
+  javax/annotation/RegEx.java: '8'
+  javax/annotation/Signed.java: '8'
+  javax/annotation/Syntax.java: '8'
+  javax/annotation/Tainted.java: '8'
+  javax/annotation/Untainted.java: '8'
+  javax/annotation/WillClose.java: '8'
+  javax/annotation/WillCloseWhenClosed.java: '8'
+  javax/annotation/WillNotClose.java: '8'
+  javax/annotation/concurrent/GuardedBy.java: '8'
+  javax/annotation/concurrent/Immutable.java: '8'
+  javax/annotation/concurrent/NotThreadSafe.java: '8'
+  javax/annotation/concurrent/ThreadSafe.java: '8'
+  javax/annotation/meta/Exclusive.java: '8'
+  javax/annotation/meta/Exhaustive.java: '8'
+  javax/annotation/meta/TypeQualifier.java: '8'
+  javax/annotation/meta/TypeQualifierDefault.java: '8'
+  javax/annotation/meta/TypeQualifierNickname.java: '8'
+  javax/annotation/meta/TypeQualifierValidator.java: '8'
+  javax/annotation/meta/When.java: '8'
+  jsr305_annotations/Jsr305_annotations.gwt.xml: '8'
+  org/jsoup/nodes/entities-base.properties: '8'
+  org/jsoup/nodes/entities-full.properties: '8'
+  org/jsoup/nodes/entities-xhtml.properties: '0'
+usesFramework:
+  ids:
+  - 1
+  tag: null
+version: 2.3.4
+versionInfo:
+  versionCode: '1947'
+  versionName: OD - 14.10.2001 BETA 17

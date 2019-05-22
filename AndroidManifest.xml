@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="code.name.pixspark.onedmusic" platformBuildVersionCode="27" platformBuildVersionName="P">
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.BROADCAST_STICKY"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission android:name="code.name.monkey.retromusic.permission.C2D_MESSAGEjn" android:protectionLevel="signature"/>
+    <uses-permission android:name="code.name.monkey.retromusic.permission.C2D_MESSAGEjn"/>
+    <application android:allowBackup="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:name="code.name.monkey.retromusic.RetroApplication" android:supportsRtl="true" android:theme="@style/Theme.RetroMusic.Light">
+        <activity android:label="@string/app_name" android:name="code.name.monkey.retromusic.ui.activities.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MUSIC_PLAYER"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.APP_MUSIC"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.media.action.MEDIA_PLAY_FROM_SEARCH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="content"/>
+                <data android:mimeType="audio/*"/>
+                <data android:mimeType="application/ogg"/>
+                <data android:mimeType="application/x-ogg"/>
+                <data android:mimeType="application/itunes"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="file"/>
+                <data android:mimeType="audio/*"/>
+                <data android:mimeType="application/ogg"/>
+                <data android:mimeType="application/x-ogg"/>
+                <data android:mimeType="application/itunes"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="http"/>
+                <data android:mimeType="audio/*"/>
+                <data android:mimeType="application/ogg"/>
+                <data android:mimeType="application/x-ogg"/>
+                <data android:mimeType="application/itunes"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="vnd.android.cursor.dir/playlist"/>
+                <data android:mimeType="vnd.android.cursor.dir/albums"/>
+                <data android:mimeType="vnd.android.cursor.dir/artists"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.cyanogenmod.eleven.AUDIO_PLAYER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PICK"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.OPENABLE"/>
+                <data android:mimeType="vnd.android.cursor.dir/audio"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="code.name.monkey.retromusic.ui.activities.AlbumDetailsActivity"/>
+        <activity android:name="code.name.monkey.retromusic.ui.activities.ArtistDetailActivity"/>
+        <activity android:name="code.name.monkey.retromusic.ui.activities.PlaylistDetailActivity"/>
+        <activity android:name="code.name.monkey.retromusic.ui.activities.PlayingQueueActivity"/>
+        <activity android:name="code.name.monkey.retromusic.ui.activities.AboutActivity"/>
+        <activity android:name="code.name.monkey.retromusic.ui.activities.tageditor.AlbumTagEditorActivity"/>
+        <activity android:name="code.name.monkey.retromusic.ui.activities.tageditor.SongTagEditorActivity"/>
+        <activity android:name="code.name.monkey.retromusic.ui.activities.SettingsActivity"/>
+        <activity android:name="code.name.monkey.retromusic.ui.activities.SearchActivity"/>
+        <activity android:name="code.name.monkey.retromusic.ui.activities.LyricsActivity"/>
+        <activity android:name="code.name.monkey.retromusic.ui.activities.UserInfoActivity"/>
+        <activity android:launchMode="singleInstance" android:name="code.name.monkey.retromusic.appshortcuts.AppShortcutLauncherActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:autoRemoveFromRecents="true" android:launchMode="singleInstance" android:name="code.name.monkey.retromusic.ui.activities.LockScreenActivity" android:screenOrientation="sensorPortrait" android:showOnLockScreen="true"/>
+        <activity android:name="code.name.monkey.retromusic.ui.activities.SupportDevelopmentActivity"/>
+        <activity android:name="code.name.monkey.retromusic.ui.activities.CastDeviceActivity"/>
+        <service android:enabled="true" android:name="code.name.monkey.retromusic.service.MusicService"/>
+        <receiver android:name="code.name.monkey.retromusic.appwidgets.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:label="@string/app_widget_big_name" android:name="code.name.monkey.retromusic.appwidgets.AppWidgetBig">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/app_widget_big_info"/>
+        </receiver>
+        <receiver android:exported="false" android:label="@string/app_widget_classic_name" android:name="code.name.monkey.retromusic.appwidgets.AppWidgetClassic">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/app_widget_classic_info"/>
+        </receiver>
+        <receiver android:exported="false" android:label="@string/app_widget_small_name" android:name="code.name.monkey.retromusic.appwidgets.AppWidgetSmall">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/app_widget_small_info"/>
+        </receiver>
+        <receiver android:exported="false" android:label="@string/app_widget_card_name" android:name="code.name.monkey.retromusic.appwidgets.AppWidgetCard">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/app_widget_card_info"/>
+        </receiver>
+        <receiver android:name="code.name.monkey.retromusic.service.MediaButtonIntentReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="android.max_aspect" android:value="2.1"/>
+        <meta-data android:name="com.lge.support.SPLIT_WINDOW" android:value="true"/>
+        <meta-data android:name="code.name.monkey.retromusic.glide.RetroMusicGlideModule" android:value="GlideModule"/>
+        <meta-data android:name="com.bumptech.glide.integration.okhttp3.OkHttpGlideModule" android:value="GlideModule"/>
+        <meta-data android:name="io.fabric.ApiKey" android:value="e43869062d94e0d38d73e501496529c9d6a9f2cd"/>
+        <provider android:authorities="code.name.pixspark.onedmusic" android:exported="false" android:grantUriPermissions="true" android:name="android.support.v4.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/provider_paths"/>
+        </provider>
+        <activity android:name="com.kabouzeid.appthemehelper.common.ATHToolbarActivity"/>
+        <activity android:name="com.kabouzeid.appthemehelper.ATHActivity"/>
+        <activity android:name="com.kabouzeid.appthemehelper.common.ATHActionBarActivity"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.measurement.UPLOAD"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="code.name.pixspark.onedmusic"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"/>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="code.name.pixspark.onedmusic.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <meta-data android:name="android.arch.lifecycle.VERSION" android:value="27.0.0-SNAPSHOT"/>
+    </application>
+</manifest>
